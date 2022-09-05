@@ -1,0 +1,34 @@
+{
+  "customerDetails": [
+    {
+      "id": "1",
+      "name": "Ankesh",
+      "address": "narela",
+      "mNumber": "1023456789",
+      "gender": "male",
+      "checkInDate": "04/09/2022",
+      "checkOutDate": "05/09/2022"
+    },
+    {
+      "id": "2",
+      "name": "harry",
+      "address": "narela",
+      "mNumber": "1023456799",
+      "gender": "male",
+      "checkInDate": "04/09/2022",
+      "checkOutDate": "05/09/2022"
+    },
+    {
+      "id": "YF_Dltd"
+    },
+    {
+      "id": "yX9Yp-7"
+    },
+    {
+      "id": "PuootNX"
+    },
+    {
+      "id": "cOoCJwq"
+    }
+  ]
+}

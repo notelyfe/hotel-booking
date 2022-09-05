@@ -1,16 +1,35 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
+import Context from './context/Context'
 
 const Home = () => {
 
-    // const [name, setName] = useState('')
-    // const [address, setAddress] = useState('')
-    // const [mNumber, setMNumber] = useState('')
-    // const [gender, setGender] = useState('')
-    // const [date, setDate] = useState('')
+    const context = useContext(Context)
+    const { addCustomerDetails } = context;
 
-    const submit = (e) => {
+    const [detail, setDetail] = useState({
+        customerName: "",
+        address: "",
+        mNumber: "",
+        gender: "",
+        checkInDate: "",
+        checkOutDate: ""
+    })
+
+    const handelClick = (e) => {
         e.preventDefault()
-        console.log('submit clicked')
+        addCustomerDetails(detail.customerName, detail.address, detail.mNumber, detail.gender, detail.checkInDate, detail.checkOutDate)
+        setDetail({
+            customerName: "",
+            address: "",
+            mNumber: "",
+            gender: "",
+            checkInDate: "",
+            checkOutDate: ""
+        })
+    }
+
+    const handelChange = (e) => {
+        setDetail({...detail, [e.target.name]: e.target.value})
     }
 
     return (
@@ -24,27 +43,36 @@ const Home = () => {
                         type="text"
                         className="form-control"
                         id="name"
-                        aria-describedby="name" />
+                        name="customerName"
+                        aria-describedby="name"
+                        onChange={handelChange}
+                        value={detail.customerName} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="address" className="form-label">Address</label>
                     <input
                         type="text"
-                        className="form-control" />
+                        className="form-control"
+                        onChange={handelChange}
+                        name="address"
+                        value={detail.address} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mNumber" className="form-label">Mobile Number</label>
                     <input
                         type="text"
                         className="form-control"
-                        id="mNumber"/>
+                        id="mNumber"
+                        name="mNumber"
+                        onChange={handelChange}
+                        value={detail.mNumber} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mNumber" className="form-label">Select Gender</label>
-                    <select className="form-select" aria-label="Default select example">
+                    <select className="form-select" aria-label="Default select example" name="gender" onChange={handelChange}>
                         <option selected>Select...</option>
-                        <option >Male</option>
-                        <option >Female</option>
+                        <option value={detail.gender} >Male</option>
+                        <option value={detail.gender} >Female</option>
                     </select>
                 </div>
                 <div className="mb-3">
@@ -52,9 +80,26 @@ const Home = () => {
                     <input
                         type="date"
                         className="form-control"
-                        id="date"/>
+                        id="checkInDate"
+                        name="checkInDate"
+                        onChange={handelChange}
+                        value={detail.checkInDate} />
                 </div>
-                <button type="submit" className="btn btn-primary" onClick={submit}>Submit</button>
+                <div className="mb-3">
+                    <label htmlFor="mNumber" className="form-label">CheckOut Date</label>
+                    <input
+                        type="date"
+                        className="form-control"
+                        id="checkOutDate"
+                        name="checkOutDate"
+                        onChange={handelChange}
+                        value={detail.checkOutDate} />
+                </div>
+                <button
+                    type="submit"
+                    className="btn btn-primary"
+                    onClick={handelClick}>Submit</button>
+
             </form>
 
         </div>

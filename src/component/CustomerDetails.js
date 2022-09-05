@@ -1,7 +1,6 @@
 import React from 'react'
-import { useState } from 'react'
 
-const CustomerDetails = ({ detail }) => {
+const CustomerDetails = ({ propDetail }) => {
 
     return (
 
@@ -9,27 +8,27 @@ const CustomerDetails = ({ detail }) => {
             <div className="container rounded" style={{ border: "2px solid black" }}>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Name :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.name}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.name}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Gender :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.gender}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.gender}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Address :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.address}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.address}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Mobile No. :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.mNumber}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.mNumber}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>CheckIn Date :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.checkInDate}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.checkInDate}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>CheckOut Date :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{detail.checkOutDate}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.checkOutDate}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Day Stayed :</h5>

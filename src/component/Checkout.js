@@ -5,17 +5,26 @@ import Context from './context/Context'
 const Checkout = (  ) => {
 
     const context = useContext(Context)
-    const {details, setSetails} = context
+    const {details} = context
 
     const search = (e) => {
-        e.preventDefault();  
+        e.preventDefault(); 
+        details.map((detail) => {
+            if(detail.mNumber === number){
+                setFound(true)
+                setPropDetail(detail)
+            }
+            setNumber('')
+        }) 
     }
+    const [propDetail, setPropDetail] = useState()
 
     const handelNumberSearch = (e) => {
         e.preventDefault();
         setNumber(e.target.value)
     }
 
+    const [found, setFound] = useState(false)
     const [number, setNumber] = useState('')
 
     return (
@@ -35,9 +44,7 @@ const Checkout = (  ) => {
                 <div className='container' style={{ width: '80%' }}>
                 <h2 className='text-center'>Customer Details</h2>
                 <div >
-                {details.map((detail)=> {
-                  return  (detail.mNumber === number?<CustomerDetails key={detail.mNumber} detail={detail}/>:"")
-                })}
+                {(found === true)?<CustomerDetails key={propDetail.id} propDetail={propDetail}/>:""}
                 </div>
                 </div>
         </form>
