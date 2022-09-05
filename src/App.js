@@ -4,10 +4,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './component/Home';
 import Checkout from './component/Checkout';
+import State from './component/context/State'
 
 function App() {
+
   return (
     <>
+    <State>
       <Router>
         <Nav />
         <Routes>
@@ -15,6 +18,7 @@ function App() {
           <Route path='/checkout' element={<Checkout />} />
         </Routes>
       </Router>
+    </State> 
     </>
   );
 }
