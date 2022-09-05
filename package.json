@@ -1,5 +1,5 @@
 {
-  "name": "hotel-billing-with-json-server",
+  "name": "hotel-booking",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

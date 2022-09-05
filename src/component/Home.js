@@ -6,30 +6,22 @@ const Home = () => {
     const context = useContext(Context)
     const { addCustomerDetails } = context;
 
-    const [detail, setDetail] = useState({
-        customerName: "",
-        address: "",
-        mNumber: "",
-        gender: "",
-        checkInDate: "",
-        checkOutDate: ""
-    })
+    const [customerName, setCustomerName] = useState('')
+    const [address, setAddress] = useState('')
+    const [mNumber, setMNumber] = useState('')
+    const [gender, setGender] = useState('')
+    const [checkInDate, setCheckInDate] = useState('')
+    const [checkOutDate, setCheckOutDate] = useState('')
 
     const handelClick = (e) => {
         e.preventDefault()
-        addCustomerDetails(detail.customerName, detail.address, detail.mNumber, detail.gender, detail.checkInDate, detail.checkOutDate)
-        setDetail({
-            customerName: "",
-            address: "",
-            mNumber: "",
-            gender: "",
-            checkInDate: "",
-            checkOutDate: ""
-        })
-    }
-
-    const handelChange = (e) => {
-        setDetail({...detail, [e.target.name]: e.target.value})
+        addCustomerDetails(customerName, address, mNumber, gender, checkInDate, checkOutDate)
+        setCustomerName('')
+        setAddress('')
+        setMNumber('')
+        setGender('')
+        setCheckInDate('')
+        setCheckOutDate('')
     }
 
     return (
@@ -45,17 +37,17 @@ const Home = () => {
                         id="name"
                         name="customerName"
                         aria-describedby="name"
-                        onChange={handelChange}
-                        value={detail.customerName} />
+                        onChange={(e) => setCustomerName(e.target.value)}
+                        value={customerName} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="address" className="form-label">Address</label>
                     <input
                         type="text"
                         className="form-control"
-                        onChange={handelChange}
+                        onChange={(e)=> setAddress(e.target.value)}
                         name="address"
-                        value={detail.address} />
+                        value={address} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mNumber" className="form-label">Mobile Number</label>
@@ -64,15 +56,15 @@ const Home = () => {
                         className="form-control"
                         id="mNumber"
                         name="mNumber"
-                        onChange={handelChange}
-                        value={detail.mNumber} />
+                        onChange={(e)=>setMNumber(e.target.value)}
+                        value={mNumber} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mNumber" className="form-label">Select Gender</label>
-                    <select className="form-select" aria-label="Default select example" name="gender" onChange={handelChange}>
-                        <option selected>Select...</option>
-                        <option value={detail.gender} >Male</option>
-                        <option value={detail.gender} >Female</option>
+                    <select className="form-select" aria-label="Default select example" name="gender" onChange={(e)=> setGender(e.target.value)}>
+                        <option >Select...</option>
+                        <option value="Male" >Male</option>
+                        <option value="Female" >Female</option>
                     </select>
                 </div>
                 <div className="mb-3">
@@ -82,8 +74,8 @@ const Home = () => {
                         className="form-control"
                         id="checkInDate"
                         name="checkInDate"
-                        onChange={handelChange}
-                        value={detail.checkInDate} />
+                        onChange={(e)=> setCheckInDate(e.target.value)}
+                        value={checkInDate} />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="mNumber" className="form-label">CheckOut Date</label>
@@ -92,8 +84,8 @@ const Home = () => {
                         className="form-control"
                         id="checkOutDate"
                         name="checkOutDate"
-                        onChange={handelChange}
-                        value={detail.checkOutDate} />
+                        onChange={(e)=> setCheckOutDate(e.target.value)}
+                        value={checkOutDate} />
                 </div>
                 <button
                     type="submit"

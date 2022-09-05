@@ -23,19 +23,19 @@ const State = (props) => {
     }
 
     //Add details
-    const addCustomerDetails = async (customerName, address, mNumber, gender, checkInDate, checkOutDate) =>{
+    const addCustomerDetails = async (detail) =>{
 
         const res = await fetch('http://localhost:5000/customerDetails', {
             method: 'POST',
             header: {
                 'Content-type': 'application/json'
             },
-            body: JSON.stringify({customerName, address, mNumber, gender, checkInDate, checkOutDate})
+            body: JSON.stringify(detail)
         });
 
         const data = await res.json()
-        // setDetails([...details, data])
-        setDetails([details.concat(data)])
+        setDetails([...details, data])
+        // setDetails([details.concat(data)])
     }
 
     return (
