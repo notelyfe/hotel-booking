@@ -41,7 +41,7 @@ const Home = () => {
     return (
         <>
             {(alert===true)?<Alert closeAlert={closeAlert}/>:""}
-            <div className="container" style={{ width: "60%", marginTop: "60px" }}>
+            <div className="container" style={{ width: "50%", marginTop: "60px" }}>
                 <h2 className='text-center'>Customer Details</h2>
 
                 <form onSubmit={submit}>
