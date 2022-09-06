@@ -17,7 +17,7 @@ const Home = () => {
 
     const submit = (e) => {
         e.preventDefault()
-        if ((customerName !== '') && (address !== '') && (mNumber !== '') && (gender !== 'default') && (checkInDate !== '') && (checkOutDate !== '')) {
+        if ((customerName !== '') && (address !== '') && (mNumber !== '') && (gender !== 'default') && (checkInDate !== '') && (checkOutDate !== '') && (mNumber.length === 10)) {
             addCustomerDetails({ customerName, address, mNumber, gender, checkInDate, checkOutDate })
             setCustomerName('')
             setAddress('')
