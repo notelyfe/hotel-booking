@@ -24,7 +24,7 @@ const State = (props) => {
 
     //Add details
     const addCustomerDetails = async (customerName, address, mNumber, gender, checkInDate, checkOutDate) =>{
-
+        // eslint-disable-next-line
         const res = await fetch('http://localhost:5000/customerDetails', {
             method: 'POST',
             headers: {
@@ -32,6 +32,9 @@ const State = (props) => {
             },
             body: JSON.stringify(customerName, address, mNumber, gender, checkInDate, checkOutDate)
         });
+        // const data = await res.json()
+        // setDetails(JSON.parse(data))
+
     }
 
     return (

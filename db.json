@@ -1,10 +1,10 @@
 {
   "customerDetails": [
     {
-      "customerName": "ankesh",
-      "address": "narela",
+      "customerName": "JOHN",
+      "address": "INDIA",
       "mNumber": "9876543210",
-      "gender": "Male",
+      "gender": "MALE",
       "checkInDate": "2022-09-06",
       "checkOutDate": "2022-09-07",
       "id": 1
