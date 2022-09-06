@@ -8,7 +8,7 @@ const CustomerDetails = ({ propDetail }) => {
             <div className="container rounded" style={{ border: "2px solid black" }}>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Name :</h5>
-                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.name}</div>
+                    <div className="container my-1" style={{ width: "70%", fontSize: "20px" }}>{propDetail.customerName}</div>
                 </div>
                 <div className="container d-flex" style={{ height: "50px", justifyContent: 'center', alignItems: "center" }}>
                     <h5 className='mx-1' style={{ width: '30%' }}>Gender :</h5>

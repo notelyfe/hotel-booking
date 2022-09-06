@@ -13,9 +13,9 @@ const Home = () => {
     const [checkInDate, setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
 
-    const handelClick = (e) => {
+    const submit = (e) => {
         e.preventDefault()
-        addCustomerDetails(customerName, address, mNumber, gender, checkInDate, checkOutDate)
+        addCustomerDetails({customerName, address, mNumber, gender, checkInDate, checkOutDate})
         setCustomerName('')
         setAddress('')
         setMNumber('')
@@ -28,7 +28,7 @@ const Home = () => {
         <div className="container" style={{ width: "60%", marginTop: "60px" }}>
             <h2 className='text-center'>Customer Details</h2>
 
-            <form>
+            <form onSubmit={submit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Enter Name</label>
                     <input
@@ -90,7 +90,7 @@ const Home = () => {
                 <button
                     type="submit"
                     className="btn btn-primary"
-                    onClick={handelClick}>Submit</button>
+                    onClick={submit}>Submit</button>
 
             </form>
 
