@@ -18,7 +18,7 @@
     .optional{
         font-size: 20px;
     }
-    .mx-1{
+    .qaz{
         width: 100% !important;
         margin: 5px 0;
     }
@@ -33,6 +33,9 @@
         align-items: center !important;
         margin: 5px 0;
         height: 75px !important;
+    }
+    .customerId{
+        flex-direction: row !important;
     }
 }
 

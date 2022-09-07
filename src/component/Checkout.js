@@ -70,7 +70,8 @@ const Checkout = () => {
             <div className='container' style={{ width: '60%' }}>
                 <h2 className='text-center'>Customer Details</h2>
                 <div >
-                    {(found === true) ? <CustomerDetails key={propDetail.id} propDetail={propDetail} /> : ""}
+                    {(found === true) ? <CustomerDetails key={propDetail.id} propDetail={propDetail} /> 
+                    : <p className='text-center my-5'>Please Enter any One info to Show Details...</p>}
                 </div>
             </div>
         </form>

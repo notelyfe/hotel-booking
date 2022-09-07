@@ -37,8 +37,16 @@ const State = (props) => {
 
     }
 
+    //Delete Details
+    const deleteDetails = async (id) => {
+        await fetch(`http://localhost:5000/customerDetails/${id}`,{
+            method: 'DELETE'
+        })
+        // setDetails(details.filter((details) => details.id !== id))
+    }
+
     return (
-        <Context.Provider value={{ details, setDetails, addCustomerDetails }} >
+        <Context.Provider value={{ details, setDetails, addCustomerDetails, deleteDetails }} >
             {props.children}
         </Context.Provider>
     )
