@@ -1,0 +1,26 @@
+.edit {
+    width: 50%;
+    position: absolute;
+    top: 115px;
+    left: 25%;
+    z-index: 1;
+    background: #67f5ba;
+}
+
+.edit-input{
+    background: #7df5c5;
+    border: 1px solid white; 
+    border-radius: 5px;
+    padding-left: 7px;
+}
+
+.edit-select{
+    background: #7df5c5;
+    border: 1px solid white; 
+    border-radius: 5px;
+}
+@media (max-width: 550px){
+    .edit {
+        left: 2% ;
+    } 
+}

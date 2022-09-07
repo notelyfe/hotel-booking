@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Context from './context/Context'
 import Alert from './Alert'
+import AddConfirm from './AddConfirm'
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
     const [checkInDate, setCheckInDate] = useState('')
     const [checkOutDate, setCheckOutDate] = useState('')
     const [alert, setAlert] = useState(false)
+    const [addConfirm, setAddConfirm] = useState(false)
 
     const submit = (e) => {
         e.preventDefault()
@@ -26,6 +28,7 @@ const Home = () => {
             setCheckInDate('')
             setCheckOutDate('')
             setAlert(false)
+            setAddConfirm(true)
         }
         else{
             setAlert(true)
@@ -110,8 +113,8 @@ const Home = () => {
                         onClick={submit}>Submit</button>
 
                 </form>
-
             </div>
+            {(addConfirm===true)?<AddConfirm addConfirm={addConfirm}/>:""}
         </>
     )
 }

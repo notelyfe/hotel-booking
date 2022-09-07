@@ -28,7 +28,6 @@ const CheckoutConfirm = ({ confirmState, id }) => {
       top: "50%",
       right: "25%",
       zIndex: '1',
-      // opacity: ".9",
       background: 'darkGreen'
     }}>
       <h6 className='my-2'>Please Click on Confirm Button to checkout</h6>

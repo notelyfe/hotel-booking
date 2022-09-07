@@ -37,16 +37,44 @@ const State = (props) => {
 
     }
 
+    //Edit Details
+    const editDetails = async ({customerName, address, mNumber, gender, checkInDate, checkOutDate, id}) => {
+        const res = await fetch(`http://localhost:5000/customerDetails/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify({customerName, address, mNumber, gender, checkInDate, checkOutDate})
+        });
+        const json = await res.json();
+
+        let newDetails = JSON.parse(JSON.stringify(details))
+        //clientSide edit
+        for(let i=0; i<newDetails.length; i++){
+            const ele = newDetails[i];
+            if(ele.id === id){
+                newDetails[i].customerName = customerName
+                newDetails[i].address = address
+                newDetails[i].mNumber = mNumber
+                newDetails[i].gender = gender
+                newDetails[i].checkInDate = checkInDate
+                newDetails[i].checkOutDate = checkOutDate
+                break;
+            }
+        }
+        setDetails(newDetails)
+    }
+
     //Delete Details
     const deleteDetails = async (id) => {
         await fetch(`http://localhost:5000/customerDetails/${id}`,{
             method: 'DELETE'
         })
-        // setDetails(details.filter((details) => details.id !== id))
+        setDetails(details.filter((details) => details.id !== id))
     }
 
     return (
-        <Context.Provider value={{ details, setDetails, addCustomerDetails, deleteDetails }} >
+        <Context.Provider value={{ details, setDetails, addCustomerDetails, deleteDetails, editDetails }} >
             {props.children}
         </Context.Provider>
     )
