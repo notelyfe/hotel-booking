@@ -74,6 +74,7 @@ const Home = () => {
                             name="mNumber"
                             onChange={(e) => setMNumber(e.target.value)}
                             value={mNumber} />
+                        <small className={`text-${alert===true?"danger":""} d-${alert===true?"block":"none"} `}>Mobile Number Must be Of 10 Digits</small>
                     </div>
                     <div className="mb-3">
                         <label htmlFor="mNumber" className="form-label">Select Gender</label>

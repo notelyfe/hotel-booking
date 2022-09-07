@@ -43,4 +43,7 @@
     .container{
         width: 95% !important;
     }
+    .alert{
+        width:85% !important;
+    }
 }
