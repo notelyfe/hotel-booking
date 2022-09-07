@@ -5,6 +5,7 @@ import Home from './component/Home';
 import Checkout from './component/Checkout';
 import ConfirmMsg from './component/ConfirmMsg';
 import State from './component/context/State'
+import Admin from './component/Admin'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/checkout' element={<Checkout />} />
+          <Route path='/admin' element={<Admin />} />
           <Route path='/confirmmsg' element={<ConfirmMsg />} />
         </Routes>
       </Router>

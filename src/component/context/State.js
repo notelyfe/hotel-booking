@@ -32,8 +32,8 @@ const State = (props) => {
             },
             body: JSON.stringify(customerName, address, mNumber, gender, checkInDate, checkOutDate)
         });
-        // const data = await res.json()
-        // setDetails(JSON.parse(data))
+        const data = await res.json()
+        setDetails(JSON.parse(data))
 
     }
 
