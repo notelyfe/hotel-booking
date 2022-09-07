@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import Context from './context/Context'
+import {Link} from 'react-router-dom'
 
 const CheckoutConfirm = ({ confirmState, id }) => {
 
@@ -15,6 +16,8 @@ const CheckoutConfirm = ({ confirmState, id }) => {
     e.preventDefault()
     confirmState()
     deleteDetails(id)
+    let hidden = document.getElementById('hiddenLink')
+    hidden.click()
   }
 
   return (
@@ -30,6 +33,7 @@ const CheckoutConfirm = ({ confirmState, id }) => {
     }}>
       <h6 className='my-2'>Please Click on Confirm Button to checkout</h6>
       <div className=" d-flex justify-content-end">
+        <Link className='btn' hidden id='hiddenLink'  to="/confirmmsg">home</Link>
         <button type="button" className="btn btn-success mx-1" onClick={confirm}>Confirm</button>
         <button type="button" className="btn btn-danger mx-1" onClick={cancel}>Cancel</button>
       </div>
