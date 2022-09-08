@@ -17,4 +17,4 @@ You may also see any lint errors in the console.
 ### `npm run server`
 
 Launches the server runner into other terminal.
-open [http://localhost:5000/customerDetails](http://localhost:5000/customerDetails) to view your data
+open [https://note-hotel-booking.herokuapp.com:5000/customerDetails](https://note-hotel-booking.herokuapp.com:5000/customerDetails) to view your data

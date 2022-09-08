@@ -16,7 +16,7 @@ const State = (props) => {
 
     //fetching data from json-server
     const fetchData = async () => {
-        const res = await fetch('http://localhost:5000/customerDetails')
+        const res = await fetch('https://note-hotel-booking.herokuapp.com:5000/customerDetails')
         const data = await res.json()
 
         return data
@@ -25,7 +25,7 @@ const State = (props) => {
     //Add details
     const addCustomerDetails = async (customerName, address, mNumber, gender, checkInDate, checkOutDate) =>{
         // eslint-disable-next-line
-        const res = await fetch('http://localhost:5000/customerDetails', {
+        const res = await fetch('https://note-hotel-booking.herokuapp.com:5000/customerDetails', {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json'
@@ -39,7 +39,7 @@ const State = (props) => {
 
     //Edit Details
     const editDetails = async ({customerName, address, mNumber, gender, checkInDate, checkOutDate, id}) => {
-        const res = await fetch(`http://localhost:5000/customerDetails/${id}`, {
+        const res = await fetch(`https://note-hotel-booking.herokuapp.com:5000/customerDetails/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-type': 'application/json'
@@ -67,7 +67,7 @@ const State = (props) => {
 
     //Delete Details
     const deleteDetails = async (id) => {
-        await fetch(`http://localhost:5000/customerDetails/${id}`,{
+        await fetch(`https://note-hotel-booking.herokuapp.com:5000/customerDetails/${id}`,{
             method: 'DELETE'
         })
         setDetails(details.filter((details) => details.id !== id))
