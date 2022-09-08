@@ -1,3 +1,7 @@
 {
-  "customerDetails": []
+  "customerDetails": [
+    {
+      "id": 1
+    }
+  ]
 }
