@@ -49,4 +49,13 @@
     .alert{
         width:85% !important;
     }
+    .confirm{
+        right: 2% !important;
+    }
+}
+@media(min-width: 550px) and (max-width:710px){
+    .confirm{
+        right: 10% !important;
+        width: 75% !important;
+    }
 }
